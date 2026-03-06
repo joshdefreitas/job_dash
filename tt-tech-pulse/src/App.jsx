@@ -1,335 +1,5 @@
 import { useState, useEffect } from "react";
 
-const mockData = {
-  lastUpdated: "March 5, 2026 · 6:00 AM",
-  totalJobs: 247,
-  newToday: 18,
-  skillRankings: [
-    { skill: "Python", count: 89, trend: 12, domain: "Data & AI" },
-    { skill: "React", count: 76, trend: 8, domain: "Web Dev" },
-    { skill: "SQL", count: 71, trend: 3, domain: "Data & AI" },
-    { skill: "AWS", count: 64, trend: 19, domain: "Cloud & DevOps" },
-    { skill: "JavaScript", count: 62, trend: -2, domain: "Web Dev" },
-    { skill: "Docker", count: 48, trend: 22, domain: "Cloud & DevOps" },
-    { skill: "Node.js", count: 45, trend: 5, domain: "Web Dev" },
-    { skill: "Machine Learning", count: 41, trend: 31, domain: "Data & AI" },
-    { skill: "Kubernetes", count: 37, trend: 28, domain: "Cloud & DevOps" },
-    { skill: "PostgreSQL", count: 34, trend: 1, domain: "Data & AI" },
-    { skill: "TypeScript", count: 32, trend: 14, domain: "Web Dev" },
-    { skill: "Cybersecurity", count: 29, trend: 9, domain: "Security" },
-    { skill: "Power BI", count: 27, trend: 6, domain: "Data & AI" },
-    { skill: "Laravel", count: 25, trend: -5, domain: "Web Dev" },
-    { skill: "Flutter", count: 22, trend: 18, domain: "Mobile" },
-    { skill: "Terraform", count: 20, trend: 34, domain: "Cloud & DevOps" },
-    { skill: "Azure", count: 19, trend: 11, domain: "Cloud & DevOps" },
-    { skill: "React Native", count: 18, trend: 15, domain: "Mobile" },
-    { skill: "Penetration Testing", count: 16, trend: 7, domain: "Security" },
-    { skill: "Figma", count: 14, trend: 2, domain: "Design & UX" },
-  ],
-  domains: [
-    {
-      id: "data",
-      name: "Data & AI",
-      color: "#F59E0B",
-      jobs: 94,
-      topSkills: [
-        "Python",
-        "SQL",
-        "Machine Learning",
-        "Power BI",
-        "PostgreSQL",
-      ],
-      description:
-        "Analytics, data engineering, machine learning and AI roles across finance, energy & telecoms sectors.",
-      learningPath: [
-        {
-          phase: "Foundation",
-          duration: "2–3 months",
-          skills: [
-            "Python basics",
-            "SQL & relational databases",
-            "Statistics fundamentals",
-            "Excel / Google Sheets",
-          ],
-        },
-        {
-          phase: "Core Skills",
-          duration: "3–4 months",
-          skills: [
-            "Pandas & NumPy",
-            "Data visualization (Matplotlib, Seaborn)",
-            "Power BI / Tableau",
-            "ETL pipelines",
-          ],
-        },
-        {
-          phase: "Specialization",
-          duration: "3–5 months",
-          skills: [
-            "Machine Learning (scikit-learn)",
-            "Deep Learning (TensorFlow/PyTorch)",
-            "Cloud data (AWS/Azure)",
-            "Spark & big data tools",
-          ],
-        },
-        {
-          phase: "Job-Ready",
-          duration: "Ongoing",
-          skills: [
-            "Portfolio projects (local datasets)",
-            "Kaggle competitions",
-            "GitHub presence",
-            "DS interview prep",
-          ],
-        },
-      ],
-      resources: ["fast.ai", "Kaggle Learn", "DataCamp", "CS50's Data Science"],
-    },
-    {
-      id: "web",
-      name: "Web Dev",
-      color: "#10B981",
-      jobs: 78,
-      topSkills: ["React", "JavaScript", "Node.js", "TypeScript", "Laravel"],
-      description:
-        "Frontend, backend and fullstack engineering. High demand from fintech startups and regional enterprises.",
-      learningPath: [
-        {
-          phase: "Foundation",
-          duration: "1–2 months",
-          skills: [
-            "HTML & CSS",
-            "JavaScript fundamentals",
-            "Git & version control",
-            "Command line basics",
-          ],
-        },
-        {
-          phase: "Core Skills",
-          duration: "3–4 months",
-          skills: [
-            "React (hooks, state)",
-            "Node.js & Express",
-            "REST APIs",
-            "SQL / MongoDB",
-          ],
-        },
-        {
-          phase: "Specialization",
-          duration: "2–3 months",
-          skills: [
-            "TypeScript",
-            "Testing (Jest, Cypress)",
-            "Docker basics",
-            "CI/CD pipelines",
-          ],
-        },
-        {
-          phase: "Job-Ready",
-          duration: "Ongoing",
-          skills: [
-            "Fullstack portfolio app",
-            "Open source contributions",
-            "System design basics",
-            "Interview prep (LeetCode)",
-          ],
-        },
-      ],
-      resources: [
-        "The Odin Project",
-        "freeCodeCamp",
-        "roadmap.sh",
-        "Frontend Masters",
-      ],
-    },
-    {
-      id: "devops",
-      name: "Cloud & DevOps",
-      color: "#3B82F6",
-      jobs: 51,
-      topSkills: ["AWS", "Docker", "Kubernetes", "Terraform", "Azure"],
-      description:
-        "Infrastructure, automation & reliability engineering. Fastest growing domain in TT's tech market.",
-      learningPath: [
-        {
-          phase: "Foundation",
-          duration: "2 months",
-          skills: [
-            "Linux & bash scripting",
-            "Networking fundamentals",
-            "Git",
-            "Basic Python or Go",
-          ],
-        },
-        {
-          phase: "Core Skills",
-          duration: "3–4 months",
-          skills: [
-            "Docker & containerization",
-            "AWS core services (EC2, S3, RDS)",
-            "CI/CD (GitHub Actions)",
-            "Infrastructure as code (Terraform)",
-          ],
-        },
-        {
-          phase: "Specialization",
-          duration: "3–4 months",
-          skills: [
-            "Kubernetes & orchestration",
-            "Monitoring (Grafana, Prometheus)",
-            "Security & IAM",
-            "Multi-cloud (Azure, GCP)",
-          ],
-        },
-        {
-          phase: "Job-Ready",
-          duration: "Ongoing",
-          skills: [
-            "AWS/Azure certifications",
-            "Public homelab projects",
-            "SRE concepts",
-            "On-call & incident response",
-          ],
-        },
-      ],
-      resources: [
-        "A Cloud Guru",
-        "Linux Foundation",
-        "KodeKloud",
-        "AWS Skill Builder",
-      ],
-    },
-    {
-      id: "security",
-      name: "Security",
-      color: "#EF4444",
-      jobs: 29,
-      topSkills: [
-        "Cybersecurity",
-        "Penetration Testing",
-        "SIEM",
-        "Network Security",
-        "Compliance",
-      ],
-      description:
-        "Growing demand driven by banking, government & critical infrastructure compliance requirements.",
-      learningPath: [
-        {
-          phase: "Foundation",
-          duration: "2–3 months",
-          skills: [
-            "Networking (TCP/IP, DNS)",
-            "Linux fundamentals",
-            "Operating systems",
-            "Security concepts (CIA triad)",
-          ],
-        },
-        {
-          phase: "Core Skills",
-          duration: "3–4 months",
-          skills: [
-            "CompTIA Security+",
-            "SIEM tools",
-            "Vulnerability scanning",
-            "Incident response",
-          ],
-        },
-        {
-          phase: "Specialization",
-          duration: "4–6 months",
-          skills: [
-            "Penetration testing (Kali Linux)",
-            "OWASP Top 10",
-            "Forensics",
-            "Cloud security",
-          ],
-        },
-        {
-          phase: "Job-Ready",
-          duration: "Ongoing",
-          skills: [
-            "CEH / OSCP certification",
-            "CTF competitions",
-            "Bug bounty programs",
-            "Security portfolio",
-          ],
-        },
-      ],
-      resources: ["TryHackMe", "Hack The Box", "SANS Institute", "Cybrary"],
-    },
-    {
-      id: "mobile",
-      name: "Mobile",
-      color: "#8B5CF6",
-      jobs: 22,
-      topSkills: [
-        "Flutter",
-        "React Native",
-        "iOS (Swift)",
-        "Android (Kotlin)",
-        "Firebase",
-      ],
-      description:
-        "Mobile-first product teams across fintech, logistics and consumer apps.",
-      learningPath: [
-        {
-          phase: "Foundation",
-          duration: "1–2 months",
-          skills: [
-            "Programming fundamentals",
-            "OOP concepts",
-            "Git",
-            "UI/UX basics",
-          ],
-        },
-        {
-          phase: "Core Skills",
-          duration: "3 months",
-          skills: [
-            "Flutter & Dart OR React Native",
-            "State management",
-            "REST API integration",
-            "Local storage",
-          ],
-        },
-        {
-          phase: "Specialization",
-          duration: "2–3 months",
-          skills: [
-            "App Store / Play Store deployment",
-            "Push notifications",
-            "Native device APIs",
-            "Testing",
-          ],
-        },
-        {
-          phase: "Job-Ready",
-          duration: "Ongoing",
-          skills: [
-            "2–3 published apps",
-            "Firebase / Supabase backend",
-            "Performance optimization",
-            "Portfolio",
-          ],
-        },
-      ],
-      resources: [
-        "Flutter.dev docs",
-        "Expo docs",
-        "Angela Yu's Flutter course",
-        "CodeWithChris",
-      ],
-    },
-  ],
-  weeklyTrend: [
-    { week: "Feb 5", jobs: 198 },
-    { week: "Feb 12", jobs: 211 },
-    { week: "Feb 19", jobs: 224 },
-    { week: "Feb 26", jobs: 219 },
-    { week: "Mar 5", jobs: 247 },
-  ],
-};
-
 const domainColorMap = {
   "Data & AI": "#F59E0B",
   "Web Dev": "#10B981",
@@ -375,7 +45,7 @@ const MiniBar = ({ value, max, color }) => (
   >
     <div
       style={{
-        width: `${(value / max) * 100}%`,
+        width: `${max ? (value / max) * 100 : 0}%`,
         height: "100%",
         background: color || "#F59E0B",
         borderRadius: 2,
@@ -457,15 +127,19 @@ const PhaseCard = ({ phase, duration, skills, index }) => (
 );
 
 const MiniLineChart = ({ data }) => {
+  if (!data.length) return null;
+
   const max = Math.max(...data.map((d) => d.jobs));
   const min = Math.min(...data.map((d) => d.jobs));
   const w = 200,
     h = 48;
+
   const pts = data.map((d, i) => {
-    const x = (i / (data.length - 1)) * w;
+    const x = (i / (data.length - 1 || 1)) * w;
     const y = h - ((d.jobs - min) / (max - min || 1)) * (h - 8) - 4;
     return `${x},${y}`;
   });
+
   return (
     <svg width={w} height={h} style={{ overflow: "visible" }}>
       <defs>
@@ -499,20 +173,107 @@ export default function Dashboard() {
   const [filterDomain, setFilterDomain] = useState("All");
   const [mounted, setMounted] = useState(false);
 
+  const [overview, setOverview] = useState(null);
+  const [skillRankings, setSkillRankings] = useState([]);
+  const [domainsData, setDomainsData] = useState([]);
+  const [weeklyTrend, setWeeklyTrend] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    setMounted(true);
+    const loadData = async () => {
+      try {
+        setMounted(true);
+        setLoading(true);
+
+        const [overviewRes, skillsRes, domainsRes, trendRes] =
+          await Promise.all([
+            fetch("/data/overview.json"),
+            fetch("/data/skill-rankings.json"),
+            fetch("/data/domains.json"),
+            fetch("/data/weekly-trend.json"),
+          ]);
+
+        if (
+          !overviewRes.ok ||
+          !skillsRes.ok ||
+          !domainsRes.ok ||
+          !trendRes.ok
+        ) {
+          throw new Error("Failed to load dashboard data");
+        }
+
+        const [overviewJson, skillsJson, domainsJson, trendJson] =
+          await Promise.all([
+            overviewRes.json(),
+            skillsRes.json(),
+            domainsRes.json(),
+            trendRes.json(),
+          ]);
+
+        setOverview(overviewJson);
+        setSkillRankings(skillsJson);
+        setDomainsData(domainsJson);
+        setWeeklyTrend(trendJson);
+      } catch (err) {
+        setError(err.message || "Unknown error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
   }, []);
 
   const domains = ["All", ...Object.keys(domainColorMap)];
   const filtered =
     filterDomain === "All"
-      ? mockData.skillRankings
-      : mockData.skillRankings.filter((s) => s.domain === filterDomain);
+      ? skillRankings
+      : skillRankings.filter((s) => s.domain === filterDomain);
 
-  const maxCount = Math.max(...mockData.skillRankings.map((s) => s.count));
+  const maxCount = skillRankings.length
+    ? Math.max(...skillRankings.map((s) => s.count))
+    : 0;
+
   const activeDomain = selectedDomain
-    ? mockData.domains.find((d) => d.id === selectedDomain)
+    ? domainsData.find((d) => d.id === selectedDomain)
     : null;
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "#0A0E17",
+          color: "#E5E7EB",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+      >
+        Loading dashboard...
+      </div>
+    );
+  }
+
+  if (error || !overview) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "#0A0E17",
+          color: "#EF4444",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+      >
+        Failed to load dashboard data: {error}
+      </div>
+    );
+  }
 
   return (
     <div
@@ -612,7 +373,7 @@ export default function Dashboard() {
                 fontFamily: "monospace",
               }}
             >
-              {mockData.lastUpdated}
+              {overview.lastUpdated}
             </div>
           </div>
           <div
@@ -652,20 +413,24 @@ export default function Dashboard() {
         {[
           {
             label: "Tech Jobs Active",
-            value: mockData.totalJobs,
-            sub: `+${mockData.newToday} today`,
+            value: overview.totalJobs,
+            sub: `+${overview.newToday} today`,
           },
           {
             label: "Skills Tracked",
-            value: mockData.skillRankings.length,
+            value: overview.skillsTracked,
             sub: "across all domains",
           },
           {
             label: "Domains Mapped",
-            value: mockData.domains.length,
+            value: overview.domainsMapped,
             sub: "tech clusters",
           },
-          { label: "Weekly Growth", value: "+24%", sub: "vs last month" },
+          {
+            label: "Weekly Growth",
+            value: `+${overview.weeklyGrowth}%`,
+            sub: "vs last month",
+          },
         ].map((stat, i) => (
           <div
             key={i}
@@ -904,7 +669,7 @@ export default function Dashboard() {
                 >
                   Weekly Job Volume
                 </div>
-                <MiniLineChart data={mockData.weeklyTrend} />
+                <MiniLineChart data={weeklyTrend} />
                 <div
                   style={{
                     display: "flex",
@@ -912,7 +677,7 @@ export default function Dashboard() {
                     marginTop: 8,
                   }}
                 >
-                  {mockData.weeklyTrend.map((d) => (
+                  {weeklyTrend.map((d) => (
                     <span
                       key={d.week}
                       style={{
@@ -946,7 +711,7 @@ export default function Dashboard() {
                 >
                   🔥 Fastest Rising
                 </div>
-                {[...mockData.skillRankings]
+                {[...skillRankings]
                   .sort((a, b) => b.trend - a.trend)
                   .slice(0, 5)
                   .map((s) => (
@@ -986,7 +751,7 @@ export default function Dashboard() {
                 >
                   Jobs by Domain
                 </div>
-                {mockData.domains.map((d) => (
+                {domainsData.map((d) => (
                   <div key={d.id} style={{ marginBottom: 12 }}>
                     <div
                       style={{
@@ -1019,8 +784,8 @@ export default function Dashboard() {
         {activeTab === "domains" && !selectedDomain && (
           <div>
             <p style={{ color: "#6B7280", fontSize: 13, marginBottom: 24 }}>
-              Tech roles in Trinidad & Tobago cluster into{" "}
-              {mockData.domains.length} distinct domains. Select one to explore.
+              Tech roles in Trinidad & Tobago cluster into {domainsData.length}{" "}
+              distinct domains. Select one to explore.
             </p>
             <div
               style={{
@@ -1029,7 +794,7 @@ export default function Dashboard() {
                 gap: 16,
               }}
             >
-              {mockData.domains.map((domain, i) => (
+              {domainsData.map((domain, i) => (
                 <div
                   key={domain.id}
                   className="domain-card"
@@ -1131,7 +896,7 @@ export default function Dashboard() {
                 flexWrap: "wrap",
               }}
             >
-              {mockData.domains.map((d) => (
+              {domainsData.map((d) => (
                 <button
                   key={d.id}
                   className="filter-btn"

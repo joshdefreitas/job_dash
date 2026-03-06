@@ -1,0 +1,42 @@
+[
+  { "skill": "Python", "count": 89, "trend": 12, "domain": "Data & AI" },
+  { "skill": "React", "count": 76, "trend": 8, "domain": "Web Dev" },
+  { "skill": "SQL", "count": 71, "trend": 3, "domain": "Data & AI" },
+  { "skill": "AWS", "count": 64, "trend": 19, "domain": "Cloud & DevOps" },
+  { "skill": "JavaScript", "count": 62, "trend": -2, "domain": "Web Dev" },
+  { "skill": "Docker", "count": 48, "trend": 22, "domain": "Cloud & DevOps" },
+  { "skill": "Node.js", "count": 45, "trend": 5, "domain": "Web Dev" },
+  {
+    "skill": "Machine Learning",
+    "count": 41,
+    "trend": 31,
+    "domain": "Data & AI"
+  },
+  {
+    "skill": "Kubernetes",
+    "count": 37,
+    "trend": 28,
+    "domain": "Cloud & DevOps"
+  },
+  { "skill": "PostgreSQL", "count": 34, "trend": 1, "domain": "Data & AI" },
+  { "skill": "TypeScript", "count": 32, "trend": 14, "domain": "Web Dev" },
+  { "skill": "Cybersecurity", "count": 29, "trend": 9, "domain": "Security" },
+  { "skill": "Power BI", "count": 27, "trend": 6, "domain": "Data & AI" },
+  { "skill": "Laravel", "count": 25, "trend": -5, "domain": "Web Dev" },
+  { "skill": "Flutter", "count": 22, "trend": 18, "domain": "Mobile" },
+  {
+    "skill": "Terraform",
+    "count": 20,
+    "trend": 34,
+    "domain": "Cloud & DevOps"
+  },
+  { "skill": "Azure", "count": 19, "trend": 11, "domain": "Cloud & DevOps" },
+  { "skill": "React Native", "count": 18, "trend": 15, "domain": "Mobile" },
+  {
+    "skill": "Penetration Testing",
+    "count": 16,
+    "trend": 7,
+    "domain": "Security"
+  },
+  { "skill": "Figma", "count": 14, "trend": 2, "domain": "Design & UX" }
+]

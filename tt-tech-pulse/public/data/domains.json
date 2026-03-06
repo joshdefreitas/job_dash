@@ -1,0 +1,290 @@
+[
+  {
+    "id": "data",
+    "name": "Data & AI",
+    "color": "#F59E0B",
+    "jobs": 94,
+    "topSkills": [
+      "Python",
+      "SQL",
+      "Machine Learning",
+      "Power BI",
+      "PostgreSQL"
+    ],
+    "description": "Analytics, data engineering, machine learning and AI roles across finance, energy & telecoms sectors.",
+    "learningPath": [
+      {
+        "phase": "Foundation",
+        "duration": "2–3 months",
+        "skills": [
+          "Python basics",
+          "SQL & relational databases",
+          "Statistics fundamentals",
+          "Excel / Google Sheets"
+        ]
+      },
+      {
+        "phase": "Core Skills",
+        "duration": "3–4 months",
+        "skills": [
+          "Pandas & NumPy",
+          "Data visualization (Matplotlib, Seaborn)",
+          "Power BI / Tableau",
+          "ETL pipelines"
+        ]
+      },
+      {
+        "phase": "Specialization",
+        "duration": "3–5 months",
+        "skills": [
+          "Machine Learning (scikit-learn)",
+          "Deep Learning (TensorFlow/PyTorch)",
+          "Cloud data (AWS/Azure)",
+          "Spark & big data tools"
+        ]
+      },
+      {
+        "phase": "Job-Ready",
+        "duration": "Ongoing",
+        "skills": [
+          "Portfolio projects (local datasets)",
+          "Kaggle competitions",
+          "GitHub presence",
+          "DS interview prep"
+        ]
+      }
+    ],
+    "resources": ["fast.ai", "Kaggle Learn", "DataCamp", "CS50's Data Science"]
+  },
+  {
+    "id": "web",
+    "name": "Web Dev",
+    "color": "#10B981",
+    "jobs": 78,
+    "topSkills": ["React", "JavaScript", "Node.js", "TypeScript", "Laravel"],
+    "description": "Frontend, backend and fullstack engineering. High demand from fintech startups and regional enterprises.",
+    "learningPath": [
+      {
+        "phase": "Foundation",
+        "duration": "1–2 months",
+        "skills": [
+          "HTML & CSS",
+          "JavaScript fundamentals",
+          "Git & version control",
+          "Command line basics"
+        ]
+      },
+      {
+        "phase": "Core Skills",
+        "duration": "3–4 months",
+        "skills": [
+          "React (hooks, state)",
+          "Node.js & Express",
+          "REST APIs",
+          "SQL / MongoDB"
+        ]
+      },
+      {
+        "phase": "Specialization",
+        "duration": "2–3 months",
+        "skills": [
+          "TypeScript",
+          "Testing (Jest, Cypress)",
+          "Docker basics",
+          "CI/CD pipelines"
+        ]
+      },
+      {
+        "phase": "Job-Ready",
+        "duration": "Ongoing",
+        "skills": [
+          "Fullstack portfolio app",
+          "Open source contributions",
+          "System design basics",
+          "Interview prep (LeetCode)"
+        ]
+      }
+    ],
+    "resources": [
+      "The Odin Project",
+      "freeCodeCamp",
+      "roadmap.sh",
+      "Frontend Masters"
+    ]
+  },
+  {
+    "id": "devops",
+    "name": "Cloud & DevOps",
+    "color": "#3B82F6",
+    "jobs": 51,
+    "topSkills": ["AWS", "Docker", "Kubernetes", "Terraform", "Azure"],
+    "description": "Infrastructure, automation & reliability engineering. Fastest growing domain in TT's tech market.",
+    "learningPath": [
+      {
+        "phase": "Foundation",
+        "duration": "2 months",
+        "skills": [
+          "Linux & bash scripting",
+          "Networking fundamentals",
+          "Git",
+          "Basic Python or Go"
+        ]
+      },
+      {
+        "phase": "Core Skills",
+        "duration": "3–4 months",
+        "skills": [
+          "Docker & containerization",
+          "AWS core services (EC2, S3, RDS)",
+          "CI/CD (GitHub Actions)",
+          "Infrastructure as code (Terraform)"
+        ]
+      },
+      {
+        "phase": "Specialization",
+        "duration": "3–4 months",
+        "skills": [
+          "Kubernetes & orchestration",
+          "Monitoring (Grafana, Prometheus)",
+          "Security & IAM",
+          "Multi-cloud (Azure, GCP)"
+        ]
+      },
+      {
+        "phase": "Job-Ready",
+        "duration": "Ongoing",
+        "skills": [
+          "AWS/Azure certifications",
+          "Public homelab projects",
+          "SRE concepts",
+          "On-call & incident response"
+        ]
+      }
+    ],
+    "resources": [
+      "A Cloud Guru",
+      "Linux Foundation",
+      "KodeKloud",
+      "AWS Skill Builder"
+    ]
+  },
+  {
+    "id": "security",
+    "name": "Security",
+    "color": "#EF4444",
+    "jobs": 29,
+    "topSkills": [
+      "Cybersecurity",
+      "Penetration Testing",
+      "SIEM",
+      "Network Security",
+      "Compliance"
+    ],
+    "description": "Growing demand driven by banking, government & critical infrastructure compliance requirements.",
+    "learningPath": [
+      {
+        "phase": "Foundation",
+        "duration": "2–3 months",
+        "skills": [
+          "Networking (TCP/IP, DNS)",
+          "Linux fundamentals",
+          "Operating systems",
+          "Security concepts (CIA triad)"
+        ]
+      },
+      {
+        "phase": "Core Skills",
+        "duration": "3–4 months",
+        "skills": [
+          "CompTIA Security+",
+          "SIEM tools",
+          "Vulnerability scanning",
+          "Incident response"
+        ]
+      },
+      {
+        "phase": "Specialization",
+        "duration": "4–6 months",
+        "skills": [
+          "Penetration testing (Kali Linux)",
+          "OWASP Top 10",
+          "Forensics",
+          "Cloud security"
+        ]
+      },
+      {
+        "phase": "Job-Ready",
+        "duration": "Ongoing",
+        "skills": [
+          "CEH / OSCP certification",
+          "CTF competitions",
+          "Bug bounty programs",
+          "Security portfolio"
+        ]
+      }
+    ],
+    "resources": ["TryHackMe", "Hack The Box", "SANS Institute", "Cybrary"]
+  },
+  {
+    "id": "mobile",
+    "name": "Mobile",
+    "color": "#8B5CF6",
+    "jobs": 22,
+    "topSkills": [
+      "Flutter",
+      "React Native",
+      "iOS (Swift)",
+      "Android (Kotlin)",
+      "Firebase"
+    ],
+    "description": "Mobile-first product teams across fintech, logistics and consumer apps.",
+    "learningPath": [
+      {
+        "phase": "Foundation",
+        "duration": "1–2 months",
+        "skills": [
+          "Programming fundamentals",
+          "OOP concepts",
+          "Git",
+          "UI/UX basics"
+        ]
+      },
+      {
+        "phase": "Core Skills",
+        "duration": "3 months",
+        "skills": [
+          "Flutter & Dart OR React Native",
+          "State management",
+          "REST API integration",
+          "Local storage"
+        ]
+      },
+      {
+        "phase": "Specialization",
+        "duration": "2–3 months",
+        "skills": [
+          "App Store / Play Store deployment",
+          "Push notifications",
+          "Native device APIs",
+          "Testing"
+        ]
+      },
+      {
+        "phase": "Job-Ready",
+        "duration": "Ongoing",
+        "skills": [
+          "2–3 published apps",
+          "Firebase / Supabase backend",
+          "Performance optimization",
+          "Portfolio"
+        ]
+      }
+    ],
+    "resources": [
+      "Flutter.dev docs",
+      "Expo docs",
+      "Angela Yu's Flutter course",
+      "CodeWithChris"
+    ]
+  }
+]
